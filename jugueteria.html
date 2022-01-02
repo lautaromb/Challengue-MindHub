@@ -19,10 +19,18 @@
     <header>
         <div class="container-fluid align-items-center" id="header">
             <div class="row">
-                <div class="col-7">
+                <div class="col-3">
                     <a id="title" href="./home.html">
                         <h2>Franco Pet Shop <i class="fas fa-dog"></i></h2>
                     </a>
+                </div>
+                <div class="col-4">
+                    <div id="filters" class="navbar justify-content-end">
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-sm btn-outline-light" type="submit">Search</button>
+                        </form>
+                    </div>
                 </div>
                 <div class="col-5 ">
                     <nav class="navbar justify-content-end">
@@ -41,7 +49,8 @@
                                 aria-labelledby="dropdownMenuLink">
                                 <li class="nav-item"><a class="dropdown-item" href="./farmacia.html"><i
                                             class="fas fa-prescription-bottle-alt"></i> Farmacia</a></li>
-                                <li class="nav-item"><a class="dropdown-item" href="#"><i class="fas fa-bone"></i>
+                                <li class="nav-item"><a class="dropdown-item" href="#"><i
+                                            class="fas fa-bone"></i>
                                         Juguetería</a>
                                 </li>
                             </ul>
@@ -49,21 +58,12 @@
                     </nav>
                 </div>
             </div>
-            <div id="filters">
-                <nav class="navbar justify-content-end">
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-sm btn-outline-light" type="submit">Search</button>
-                    </form>
-                </nav>
-            </div>
         </div>
     </header>
 
     <main id="main">
         <section id="app" class="row">
-            <div v-for="element  in  objects" class="col-4">
-                <template v-if="element.tipo == 'Juguete'">
+            <div v-for="element  in  objects"  v-if="element.tipo == 'Juguete'" class="col-3">
                     <div class="card" style="width: 18rem">
                         <img v-bind:src="element.imagen" class="card-img-top" alt="..." />
                         <div class="card-body">
@@ -82,7 +82,6 @@
                             <a href="#" class="card-link">Another link</a>
                         </div>
                     </div>
-                </template>
             </div>
     </main>
 
