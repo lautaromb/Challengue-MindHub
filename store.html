@@ -11,7 +11,7 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="shortcut icon" href="./favicon.ico">
-    <title>Juguetería</title>
+    <title>Store</title>
 </head>
 
 <body>
@@ -47,9 +47,9 @@
                                 data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-store"></i> Store</a>
                             <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end"
                                 aria-labelledby="dropdownMenuLink">
-                                <li class="nav-item"><a class="dropdown-item" href="./farmacia.html"><i
+                                <li class="nav-item"><a class="dropdown-item" href="#farmacia"><i
                                             class="fas fa-prescription-bottle-alt"></i> Farmacia</a></li>
-                                <li class="nav-item"><a class="dropdown-item" href="#"><i
+                                <li class="nav-item"><a class="dropdown-item" href="#jugueteria"><i
                                             class="fas fa-bone"></i>
                                         Juguetería</a>
                                 </li>
@@ -62,27 +62,59 @@
     </header>
 
     <main id="main">
-        <section id="app" class="row">
-            <div v-for="element  in  objects"  v-if="element.tipo == 'Juguete'" class="col-3">
-                    <div class="card" style="width: 18rem">
-                        <img v-bind:src="element.imagen" class="card-img-top" alt="..." />
-                        <div class="card-body">
-                            <h5 class="card-title">{{element.nombre}}</h5>
-                            <p class="card-text">
-                                {{element.descripcion}}
-                            </p>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">{{element.precio}}$</li>
-                            <li class="list-group-item">A second item</li>
-                            <li class="list-group-item">A third item</li>
-                        </ul>
-                        <div class="card-body">
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
+        <div id="store">
+            <h1>Store</h1>
+            <section id="farmacia">
+                <div class="banner">
+                    <h2>Farmacia</h2>
+                </div>
+                <div class="container-card">
+                    <div v-for="element  in  objects" v-if="element.tipo == 'Medicamento'">
+                        <div class="card  bg-light mb-3">
+                            <img v-bind:src="element.imagen" class="card-img-top" v-bind:alt="element.nombre" />
+                            <div class="card-body">
+                                <h5 class="card-title">{{element.nombre}}</h5>
+                                <p class="card-text">
+                                    {{element.descripcion}}
+                                </p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">{{element.precio}}$</li>
+                            </ul>
+                            <div class="card-body">
+                                <a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>
+                            </div>
                         </div>
                     </div>
-            </div>
+                </div>
+            </section>
+            <section id="jugueteria">
+                <div class="banner">
+                    <h2>Jugueteria</h2>
+                </div>
+                <div class="container-card">
+                    <div v-for="element  in  objects" v-if="element.tipo == 'Juguete'">
+                        <div class="card  bg-light mb-3">
+                            <img v-bind:src="element.imagen" class="card-img-top" v-bind:alt="element.nombre" />
+                            <div class="card-body">
+                                <h5 class="card-title">{{element.nombre}}</h5>
+                                <p class="card-text">
+                                    {{element.descripcion}}
+                                </p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">{{element.precio}}$</li>
+                            </ul>
+                            <div class="card-body">
+                                <a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
     <aside id="aside-whatsapp">

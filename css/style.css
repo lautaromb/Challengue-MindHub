@@ -179,3 +179,13 @@ h2:hover {
 }
 
 /* store */
+
+#store .container-card {
+    display              : grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap                  : 2rem;
+}
+
+#store .card:hover {
+    transform: scale(1.1);
+}
