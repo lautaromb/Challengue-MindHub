@@ -16,8 +16,6 @@
 
 <body>
 
-
-
     <header>
         <div class="container-fluid align-items-center" id="header">
             <div class="row">
@@ -32,7 +30,8 @@
                             <li class="nav-item"><a class="nav-link" href="./home.html"><i class="fas fa-home"></i>
                                     Home</a>
                             </li>
-                            <li class="nav-item"><a class="nav-link" href="./home.html"><i class="fas fa-paw"></i>
+                            <li class="nav-item"><a class="nav-link" href="./home.html#section-form"><i
+                                        class="fas fa-paw"></i>
                                     Contáctenos</a></li>
                         </ul>
                         <div class="dropdown">
@@ -42,7 +41,7 @@
                                 aria-labelledby="dropdownMenuLink">
                                 <li class="nav-item"><a class="dropdown-item" href="#"><i
                                             class="fas fa-prescription-bottle-alt"></i> Farmacia</a></li>
-                                <li class="nav-item"><a class="dropdown-item" href="./juguetes.html"><i
+                                <li class="nav-item"><a class="dropdown-item" href="./jugueteria.html"><i
                                             class="fas fa-bone"></i>
                                         Juguetería</a>
                                 </li>
@@ -51,8 +50,8 @@
                     </nav>
                 </div>
             </div>
-            <div id="nav-filtros">
-                <nav class="navbar">
+            <div id="filters">
+                <nav class="navbar justify-content-end">
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-sm btn-outline-light" type="submit">Search</button>
@@ -63,9 +62,6 @@
     </header>
 
     <main id="main">
-        <section id="shop">
-
-        </section>
         <section id="app" class="row">
             <div v-for="element  in  objects" v-if="element.tipo == 'Medicamento'" class="col-3">
                 <div class="card" style="width: 18rem">

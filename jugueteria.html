@@ -17,34 +17,44 @@
 <body>
 
     <header>
-        <div class="container-fluid row align-items-center" id="header">
-            <div class="">
-            <div class="col-3">
-                <a id="title" href="./home.html">
-                    <h2>Franco Pet Shop <i class="fas fa-dog"></i></h2>
-                </a>
+        <div class="container-fluid align-items-center" id="header">
+            <div class="row">
+                <div class="col-7">
+                    <a id="title" href="./home.html">
+                        <h2>Franco Pet Shop <i class="fas fa-dog"></i></h2>
+                    </a>
+                </div>
+                <div class="col-5 ">
+                    <nav class="navbar justify-content-end">
+                        <ul class="nav nav-pills">
+                            <li class="nav-item"><a class="nav-link" href="./home.html"><i class="fas fa-home"></i>
+                                    Home</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="./home.html#section-form"><i
+                                        class="fas fa-paw"></i>
+                                    Contáctenos</a></li>
+                        </ul>
+                        <div class="dropdown">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-store"></i> Store</a>
+                            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end"
+                                aria-labelledby="dropdownMenuLink">
+                                <li class="nav-item"><a class="dropdown-item" href="./farmacia.html"><i
+                                            class="fas fa-prescription-bottle-alt"></i> Farmacia</a></li>
+                                <li class="nav-item"><a class="dropdown-item" href="#"><i class="fas fa-bone"></i>
+                                        Juguetería</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
             </div>
-            <div class="col-4">
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-sm btn-outline-light" type="submit">Search</button>
-                </form>
-            </div>
-            <div class="col-5 ">
+            <div id="filters">
                 <nav class="navbar justify-content-end">
-                    <ul class="nav nav-pills">
-                        <li class="nav-item"><a class="nav-link" href="./home.html"><i class="fas fa-home"></i>
-                                Home</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="./home.html#section-form"><i
-                                    class="fas fa-paw"></i>
-                                Contáctenos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./farmacia.html"><i class="fas fa-prescription-bottle-alt"></i>
-                                Farmacia</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-bone"></i>
-                                Juguetes</a>
-                        </li>
-                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-sm btn-outline-light" type="submit">Search</button>
+                    </form>
                 </nav>
             </div>
         </div>
