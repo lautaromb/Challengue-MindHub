@@ -17,20 +17,12 @@
 <body>
 
     <header>
-        <div class="container-fluid align-items-center" id="header">
-            <div class="row">
-                <div class="col-3">
+        <div class="container-fluid" id="header">
+            <div class="row align-items-center">
+                <div class="col-7">
                     <a id="title" href="./home.html">
                         <h2>Franco Pet Shop <i class="fas fa-dog"></i></h2>
                     </a>
-                </div>
-                <div class="col-4">
-                    <div id="filters" class="navbar justify-content-end">
-                        <form class="d-flex">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-sm btn-outline-light" type="submit">Search</button>
-                        </form>
-                    </div>
                 </div>
                 <div class="col-5 ">
                     <nav class="navbar justify-content-end">
@@ -40,13 +32,16 @@
                             </li>
                             <li class="nav-item"><a class="nav-link" href="./home.html#section-form"><i
                                         class="fas fa-paw"></i>
-                                    Contáctenos</a></li>
+                                    Contáctanos</a></li>
                         </ul>
                         <div class="dropdown">
                             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                 data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-store"></i> Store</a>
                             <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end"
                                 aria-labelledby="dropdownMenuLink">
+                                <li class="nav-item"><a class="dropdown-item" href="#store"><i
+                                            class="fas fa-search"></i>
+                                        Buscador</a></li>
                                 <li class="nav-item"><a class="dropdown-item" href="#farmacia"><i
                                             class="fas fa-prescription-bottle-alt"></i> Farmacia</a></li>
                                 <li class="nav-item"><a class="dropdown-item" href="#jugueteria"><i
@@ -63,57 +58,55 @@
 
     <main id="main">
         <div id="store">
-            <h1>Store</h1>
+            <div class="banner">
+                <h1>Store</h1>
+                <div>
+                    <div id="filters">
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-sm btn-dark" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
             <section id="farmacia">
-                <div class="banner">
+                <div class="farmacia-banner">
                     <h2>Farmacia</h2>
                 </div>
                 <div class="container-card">
                     <div v-for="element  in  objects" v-if="element.tipo == 'Medicamento'">
                         <div class="card  bg-light mb-3">
-                            <img v-bind:src="element.imagen" class="card-img-top" v-bind:alt="element.nombre" />
+                            <a href="#"> <img v-bind:src="element.imagen" class="card-img-top"
+                                    v-bind:alt="element.nombre" v-bind:title="element.descripcion" /> </a>
                             <div class="card-body">
-                                <h5 class="card-title">{{element.nombre}}</h5>
+                                <h5 class="card-title">$ {{element.precio}}</h5>
                                 <p class="card-text">
-                                    {{element.descripcion}}
+                                    {{element.nombre}}
                                 </p>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">{{element.precio}}$</li>
-                            </ul>
-                            <div class="card-body">
-                                <a href="#" class="card-link">Card link</a>
-                                <a href="#" class="card-link">Another link</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
             <section id="jugueteria">
-                <div class="banner">
-                    <h2>Jugueteria</h2>
+                <div class="jugueteria-banner">
+                    <h2>Juguetería</h2>
                 </div>
                 <div class="container-card">
                     <div v-for="element  in  objects" v-if="element.tipo == 'Juguete'">
                         <div class="card  bg-light mb-3">
-                            <img v-bind:src="element.imagen" class="card-img-top" v-bind:alt="element.nombre" />
+                            <a href="#"><img v-bind:src="element.imagen" class="card-img-top"
+                                    v-bind:alt="element.nombre" v-bind:title="element.descripcion" /> </a>
                             <div class="card-body">
-                                <h5 class="card-title">{{element.nombre}}</h5>
+                                <h5 class="card-title">$ {{element.precio}}</h5>
                                 <p class="card-text">
-                                    {{element.descripcion}}
+                                    {{element.nombre}}
                                 </p>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">{{element.precio}}$</li>
-                            </ul>
-                            <div class="card-body">
-                                <a href="#" class="card-link">Card link</a>
-                                <a href="#" class="card-link">Another link</a>
                             </div>
                         </div>
                     </div>
-                </div>
             </section>
+            <div id="cargando"><i class="far fa-clock"></i> Cargando...</div>
         </div>
     </main>
 
