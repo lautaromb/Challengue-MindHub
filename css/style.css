@@ -204,9 +204,13 @@ body {
     margin-left: .1rem;
 }
 
-#carrito a{
+#carrito .dropdown>a {
     color: #000;
     font-size: 1.2rem;
+}
+
+#carrito .dropdown-item {
+    font-size: .8rem;
 }
 
 #carrito form {
