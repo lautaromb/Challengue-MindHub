@@ -55,12 +55,12 @@ body {
 }
 
 .carousel .carousel-caption {
-    display: flex;
-    height: 90vh;
+    display    : flex;
+    height     : 90vh;
     align-items: flex-end;
 }
 
-.carousel .carousel-caption p{
+.carousel .carousel-caption p {
     margin-top: 1rem;
 }
 
@@ -88,10 +88,10 @@ body {
 
 /* aside */
 #aside-whatsapp {
-    position: fixed;
-    right   : 2rem;
-    bottom  : 1rem;
-    z-index : 150;
+    position          : fixed;
+    right             : 2rem;
+    bottom            : 1rem;
+    z-index           : 150;
 }
 
 #aside-whatsapp img {
@@ -196,16 +196,18 @@ body {
 
 /* store */
 #carrito {
-    position  : fixed;
-    top: 3.3rem;
-    align-items: center;
-    width: 100%;
-    z-index: 50;
-    margin-left: .1rem;
+    position          : fixed;
+    top               : 3.3rem;
+    align-items       : center;
+    width             : 100%;
+    z-index           : 50;
+    margin-left       : .1rem;
+    animation-name    : cardAnimation;
+    animation-duration: .8s;
 }
 
 #carrito .dropdown>a {
-    color: #000;
+    color    : #000;
     font-size: 1.2rem;
 }
 
@@ -237,11 +239,13 @@ body {
 
 #store .farmacia-banner,
 #store .jugueteria-banner {
-    display      : none;
-    padding      : 2rem;
-    text-align   : center;
-    border-radius: 10px;
-    margin       : 0 2rem 3rem 2rem;
+    display           : none;
+    padding           : 2rem;
+    text-align        : center;
+    border-radius     : 10px;
+    margin            : 0 2rem 3rem 2rem;
+    animation-name    : cardAnimation;
+    animation-duration: .8s;
 }
 
 #store h2 {
@@ -257,8 +261,20 @@ body {
 }
 
 #store .card {
-    border       : none;
-    border-radius: 5px;
+    border            : none;
+    border-radius     : 5px;
+    animation-name    : cardAnimation;
+    animation-duration: .8s;
+}
+
+@keyframes cardAnimation {
+    0% {
+        transform: scale(1.5) translatey(300px);
+    }
+
+    100% {
+        transform: scale(1) translatey(0);
+    }
 }
 
 #store .card:hover {
@@ -272,15 +288,15 @@ body {
 
 
 #store .card .card-warning {
-    font-weight        : bold;
-    font-size          : 1.1rem;
-    padding            : .1rem;
-    background-color   : #c22b2bd5;
-    border-radius      : 5px;
-    color              : #fff;
-    text-align         : center;
-    opacity            : .9;
-    margin             : 0;
+    font-weight     : bold;
+    font-size       : 1.1rem;
+    padding         : .1rem;
+    background-color: #c22b2bd5;
+    border-radius   : 5px;
+    color           : #fff;
+    text-align      : center;
+    opacity         : .9;
+    margin          : 0;
 }
 
 /* shop cargando */
@@ -289,7 +305,7 @@ body {
     width     : 100%;
     text-align: center;
     top       : 50vh;
-    font-size : 2rem;
+    font-size : 1.5rem;
 }
 
 #divider {

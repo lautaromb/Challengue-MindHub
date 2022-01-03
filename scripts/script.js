@@ -3,7 +3,8 @@ let store = new Vue({
   data: {
     objects: [],
     buscador: '',
-    carrito: []
+    carrito: [],
+    total : 0 
   }
 })
 

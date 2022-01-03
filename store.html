@@ -82,11 +82,18 @@
                         <div class="dropdown">
                             <a class="btn btn-secondary dropdown-toggle bg-light" href="#" role="button"
                                 id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Carrito <i
-                                    class="fas fa-shopping-cart"></i></a>
+                                    class="fas fa-shopping-cart"></i> {{carrito.length}} </a>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <template v-for="element in carrito">
-                                    <li class="nav-item"><a class="dropdown-item"> {{element.nombre}} <strong>${{element.precio}}</strong>  </li>
+                                    <li class="nav-item">
+                                        <p class="dropdown-item"> {{element.nombre}}
+                                            <strong>${{element.precio}}</strong>
+                                        </p>
+                                    </li>
                                 </template>
+                                <li class="nav-item">
+                                    <p class="dropdown-item"> Total: <strong> $ {{this.total}} </strong></p>
+                                </li>
                             </ul>
                         </div>
                     </nav>
@@ -109,7 +116,7 @@
                 </div>
                 <div class="container-card">
                     <div v-for="element in objects" v-if="element.tipo == 'Medicamento'">
-                        <div class="card  border bg-light mb-3">
+                        <div class="card  border bg-light mb-3 ">
                             <template v-if="element.stock <= 5 && element.stock > 0">
                                 <p class="card-warning">Quedan poquitos!</p>
                             </template>
@@ -122,7 +129,8 @@
                                 <h5 class="card-title">$ {{element.precio}}</h5>
                             </div>
                             <template v-if="element.stock>0">
-                                <button class="btn btn-success" v-on:click="carrito.push(element) && element.stock --"
+                                <button class="btn btn-success"
+                                    v-on:click="carrito.push(element); element.stock --; total += element.precio"
                                     type="button">Agregar al carrito <i class="fas fa-shopping-cart"></i> </button>
                             </template>
                             <template v-if="element.stock == 0">
@@ -156,7 +164,8 @@
                                 <h5 class="card-title">$ {{element.precio}}</h5>
                             </div>
                             <template v-if="element.stock>0">
-                                <button class="btn btn-success" v-on:click="carrito.push(element) && element.stock --"
+                                <button class="btn btn-success"
+                                    v-on:click="carrito.push(element); element.stock --; total += element.precio"
                                     type="button">Agregar al carrito <i class="fas fa-shopping-cart"></i> </button>
                             </template>
                             <template v-if="element.stock == 0">
