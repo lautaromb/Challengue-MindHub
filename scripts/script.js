@@ -1,21 +1,34 @@
-  let store = new Vue({
-    el: '#store',
-    data: {
-      objects: [],
-      buscador: ''
-    }, method: {
-      
-    },
-    computed: {
-      filteredObjects: function () {
-        return this.objects.filter((element) => {
-          if (element.nombre.match(this.buscador)) {
-            return element;
-          }
-        })
+let store = new Vue({
+  el: '#store',
+  data: {
+    objects: [],
+    buscador: '',
+    carrito: main.carrito
+  }
+})
+
+let app = new Vue({
+  el: '#app',
+  data: {
+
+  },
+  methods: {
+    enviarMensaje: function () {
+      let comentarios = document.querySelector('#comentarios');
+      let name = document.querySelector('#name');
+      let last_name = document.querySelector('#last_name');
+
+      if (comentarios.value) {
+        alert('Su mensaje ha sido enviado con exito!');
+        comentarios.value = "";
+        name.value = "";
+        last_name.value = "";
+      } else {
+        alert('Ingresa un comentario campeón!')
       }
     }
-  })
+  }
+})
 
 fetch('https://apipetshop.herokuapp.com/api/articulos')
   .then(response => {
