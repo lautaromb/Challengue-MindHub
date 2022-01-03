@@ -11,9 +11,8 @@ body {
 }
 
 #header #title {
-    text-decoration    : none;
-    color              : #fff;
-    -webkit-text-stroke: 1px #000;
+    text-decoration: none;
+    color          : #fff;
 }
 
 #header #title h2:hover {
@@ -62,8 +61,7 @@ body {
 #section-form h3,
 #store h1,
 .map-container .title,
-.carousel h1,
-#store h2 {
+.carousel h1 {
     color              : #fff;
     font-size          : 5.5rem;
     -webkit-text-stroke: 2px #000;
@@ -156,6 +154,7 @@ body {
 
 #section-form .container_form-check {
     display              : grid;
+    padding              : 2rem;
     grid-template-columns: repeat(4, 1fr);
 }
 
@@ -193,6 +192,9 @@ body {
     position  : fixed;
 }
 
+#store {
+    background-color: #fafafa;
+}
 
 #store .banner {
     background     : url('../img/background-store.jpg') no-repeat center center;
@@ -210,19 +212,21 @@ body {
 
 #store .farmacia-banner,
 #store .jugueteria-banner {
-    background-color: #1c1c1e;
-    display         : none;
-    padding         : 2rem;
-    text-align      : center;
-    border-radius   : 10px;
-    margin          : 0 2rem 3rem 2rem;
+    display      : none;
+    padding      : 2rem;
+    text-align   : center;
+    border-radius: 10px;
+    margin       : 0 2rem 3rem 2rem;
 }
 
+#store h2 {
+    font-size: 3rem;
+}
 
 #store .container-card {
     display              : grid;
     grid-template-columns: repeat(3, 1fr);
-    gap                  : 11rem;
+    gap                  : 7rem;
     align-items          : flex-end;
     padding              : 8rem;
 }
@@ -238,7 +242,7 @@ body {
 }
 
 #store .card img {
-    height: 11rem;
+    height: 18rem;
 }
 
 
@@ -257,11 +261,11 @@ body {
 
 /* shop cargando */
 #store #cargando {
-    position: fixed;
-    width: 100%;
+    position  : fixed;
+    width     : 100%;
     text-align: center;
-    top: 50vh;
-    font-size: 2rem;
+    top       : 50vh;
+    font-size : 2rem;
 }
 
 #divider {
