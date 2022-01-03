@@ -11,7 +11,7 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="shortcut icon" href="./favicon.ico">
-    <title>Store</title>
+    <title>Franco Pet Shop - Store</title>
 </head>
 
 <body>
@@ -53,58 +53,93 @@
                     </nav>
                 </div>
             </div>
+            <form id="form-filters">
+                <select name="" id="">
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+            </form>
         </div>
     </header>
 
     <main id="main">
         <div id="store">
+
             <div class="banner">
                 <h1>Store</h1>
                 <div>
                     <div id="filters">
                         <form class="d-flex">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-sm btn-dark" type="submit">Search</button>
+                            <input class="form-control me-2" type="text" placeholder="Buscador" aria-label="buscador"
+                                v-model="buscador">
+                            <button class="btn btn-sm btn-dark" type="button">Buscar</button>
                         </form>
                     </div>
                 </div>
             </div>
+
             <section id="farmacia">
+                <div class="divider"></div>
                 <div class="farmacia-banner">
                     <h2>Farmacia</h2>
                 </div>
                 <div class="container-card">
-                    <div v-for="element  in  objects" v-if="element.tipo == 'Medicamento'">
+                    <div v-for="element in objects" v-if="element.tipo == 'Medicamento'">
                         <div class="card  bg-light mb-3">
                             <a href="#"> <img v-bind:src="element.imagen" class="card-img-top"
                                     v-bind:alt="element.nombre" v-bind:title="element.descripcion" /> </a>
+                            <template v-if="element.stock <= 5 && element.stock > 0">
+                                <p class="card-warning">Quedan poquitos!</p>
+                            </template>
                             <div class="card-body">
-                                <h5 class="card-title">$ {{element.precio}}</h5>
                                 <p class="card-text">
                                     {{element.nombre}}
                                 </p>
+                                <h5 class="card-title">$ {{element.precio}}</h5>
                             </div>
+                            <template v-if="element.stock>0">
+                                <button class="btn btn-dark" v-on:click="element.stock --"
+                                    type="button">Comprar!</button>
+                            </template>
+                            <template v-if="element.stock == 0">
+                                <button class="btn btn-dark" v-on:click="element.stock --" type="button" disabled>No hay
+                                    stock</button>
+                            </template>
                         </div>
                     </div>
                 </div>
             </section>
+            <div id="divider"></div>
             <section id="jugueteria">
+                <div class="divider"></div>
                 <div class="jugueteria-banner">
                     <h2>Juguetería</h2>
                 </div>
                 <div class="container-card">
-                    <div v-for="element  in  objects" v-if="element.tipo == 'Juguete'">
+                    <div v-for="element in objects" v-if="element.tipo == 'Juguete'">
                         <div class="card  bg-light mb-3">
-                            <a href="#"><img v-bind:src="element.imagen" class="card-img-top"
+                            <a href="#"> <img v-bind:src="element.imagen" class="card-img-top"
                                     v-bind:alt="element.nombre" v-bind:title="element.descripcion" /> </a>
+                            <template v-if="element.stock <= 5 && element.stock > 0">
+                                <p class="card-warning">Quedan poquitos!</p>
+                            </template>
                             <div class="card-body">
-                                <h5 class="card-title">$ {{element.precio}}</h5>
                                 <p class="card-text">
                                     {{element.nombre}}
                                 </p>
+                                <h5 class="card-title">$ {{element.precio}}</h5>
                             </div>
+                            <template v-if="element.stock>0">
+                                <button class="btn btn-dark" v-on:click="element.stock --"
+                                    type="button">Comprar!</button>
+                            </template>
+                            <template v-if="element.stock == 0">
+                                <button class="btn btn-dark" v-on:click="element.stock --" type="button" disabled>No hay
+                                    stock</button>
+                            </template>
                         </div>
                     </div>
+                </div>
             </section>
             <div id="cargando"><i class="far fa-clock"></i> Cargando...</div>
         </div>
@@ -117,7 +152,7 @@
 
     <footer id="footer">
         <ul>
-            <li>@Grupo 4</li>
+            <li>@Mauri Godoy</li>
             <li>Todos los derechos reservados</li>
         </ul>
         <ul>

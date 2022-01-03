@@ -1,25 +1,34 @@
+  let store = new Vue({
+    el: '#store',
+    data: {
+      objects: [],
+      buscador: ''
+    }, method: {
+      
+    },
+    computed: {
+      filteredObjects: function () {
+        return this.objects.filter((element) => {
+          if (element.nombre.match(this.buscador)) {
+            return element;
+          }
+        })
+      }
+    }
+  })
 
-var store = new Vue({
-  el: '#store',
-  data: {
-    objects: [],
-  }
-})
-
-fetch('https://apipetshop.herokuapp.com/api/articulos').then(response => {
-  return response.json();
-}).then(data => {
-  console.log(data.response);
-  store.objects = data.response;
-})
+fetch('https://apipetshop.herokuapp.com/api/articulos')
+  .then(response => {
+    return response.json();
+  })
+  .then(data => {
+    store.objects = data.response;
+    console.log(store.objects);
+  })
   .catch(error => console.error('Error:', error))
   .finally(() => {
     document.querySelector('#cargando').style.display = 'none';
+    document.querySelector('#divider').style.display = 'none';
     document.querySelector('.farmacia-banner').style.display = 'block';
     document.querySelector('.jugueteria-banner').style.display = 'block';
   })
-
-
-function selectItem() {
-  console.log('element');
-}
