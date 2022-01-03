@@ -88,10 +88,10 @@ body {
 
 /* aside */
 #aside-whatsapp {
-    position          : fixed;
-    right             : 2rem;
-    bottom            : 1rem;
-    z-index           : 150;
+    position: fixed;
+    right   : 2rem;
+    bottom  : 1rem;
+    z-index : 150;
 }
 
 #aside-whatsapp img {
@@ -203,7 +203,7 @@ body {
     z-index           : 50;
     margin-left       : .1rem;
     animation-name    : cardAnimation;
-    animation-duration: .8s;
+    animation-duration: .6s;
 }
 
 #carrito .dropdown>a {
@@ -215,37 +215,25 @@ body {
     font-size: .8rem;
 }
 
-#carrito form {
-    display: none;
-}
-
 #store {
     background-color: #fafafa;
 }
 
-#store .banner {
-    background     : url('../img/background-store.jpg') no-repeat center center;
-    display        : flex;
-    justify-content: center;
-    align-items    : center;
-    flex-direction : column;
-    color          : #fff;
-    height         : 100vh;
-}
-
 #store .divider {
-    height: 5rem;
+    height       : 5rem;
+    margin-bottom: 3rem;
 }
 
 #store .farmacia-banner,
 #store .jugueteria-banner {
-    display           : none;
-    padding           : 2rem;
-    text-align        : center;
-    border-radius     : 10px;
+    display      : none;
+    padding      : 2rem;
+    text-align   : center;
+    border-radius: 10px;
+
     margin            : 0 2rem 3rem 2rem;
     animation-name    : cardAnimation;
-    animation-duration: .8s;
+    animation-duration: .6s;
 }
 
 #store h2 {
@@ -264,7 +252,7 @@ body {
     border            : none;
     border-radius     : 5px;
     animation-name    : cardAnimation;
-    animation-duration: .8s;
+    animation-duration: .6s;
 }
 
 @keyframes cardAnimation {
@@ -299,6 +287,12 @@ body {
     margin          : 0;
 }
 
+#store #no-producto {
+    height: 60vh;
+    margin-left: 1rem;
+    font-size: 1.5rem;
+}
+
 /* shop cargando */
 #store #cargando {
     position  : fixed;
@@ -309,5 +303,5 @@ body {
 }
 
 #divider {
-    height: 50rem;
+    margin-top: 12rem;
 }

@@ -1,19 +1,21 @@
-let store = new Vue({
-  el: '#store',
-  data: {
-    objects: [],
-    buscador: '',
-    carrito: [],
-    total : 0 
-  }
-})
-
 let app = new Vue({
   el: '#app',
   data: {
-
-  },
-  methods: {
+    objects: [],
+    buscador: "",
+    carrito: [],
+    total: 0
+  }, computed: {
+    filterObjects() {
+      return this.objects.filter(element => {
+        if (element.nombre) {
+          if (element.nombre.toLowerCase().includes(this.buscador.toLowerCase())) {
+            return element;
+          }
+        }
+      })
+    }
+  }, methods: {
     enviarMensaje: function () {
       let comentarios = document.querySelector('#comentarios');
       let name = document.querySelector('#name');
@@ -31,12 +33,13 @@ let app = new Vue({
   }
 })
 
+
 fetch('https://apipetshop.herokuapp.com/api/articulos')
   .then(response => {
     return response.json();
   })
   .then(data => {
-    store.objects = data.response;
+    app.objects = data.response;
     console.log(store.objects);
   })
   .catch(error => console.error('Error:', error))
